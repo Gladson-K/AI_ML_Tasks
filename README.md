@@ -21,39 +21,39 @@ The network contains three convolutional layers, each followed by a ReLU activat
 
 #    conv1:
 
-        Input channels: 3 (e.g., RGB image)
-
-        Output channels: 64
-
-        Kernel size: 3x3
-
-        Stride: 1
-
-        Padding: 0
+    Input channels: 3 (e.g., RGB image)
+    
+    Output channels: 64
+    
+    Kernel size: 3x3
+    
+    Stride: 1
+    
+    Padding: 0
 
 #    conv2:
 
-        Input channels: 64
+    Input channels: 64
 
-        Output channels: 256
+    Output channels: 256
 
-        Kernel size: 3x3
+    Kernel size: 3x3
 
-        Stride: 1
+    Stride: 1
 
-        Padding: 0
+    Padding: 0
 
 #    conv3:
 
-        Input channels: 256
+    Input channels: 256
 
-        Output channels: 128
+    Output channels: 128
 
-        Kernel size: 3x3
+    Kernel size: 3x3
 
-        Stride: 1
+    Stride: 1
 
-        Padding: 0
+    Padding: 0
 
         self.conv1 = nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=1, padding=0)
         self.conv2 = nn.Conv2d(in_channels=64, out_channels=256, kernel_size=3, stride=1, padding=0)
@@ -71,21 +71,21 @@ The fully connected layers (dense layers) are defined:
 
 #    fc1:
 
-        Input features: 128 * 30 * 30 (flattened output from the convolutional layers and pooling)
+    Input features: 128 * 30 * 30 (flattened output from the convolutional layers and pooling)
 
-        Output features: 128
+    Output features: 128
 
 #    fc2:
 
-        Input features: 128
+    Input features: 128
 
-        Output features: 64
+    Output features: 64
 
 #    fc3:
 
-        Input features: 64
+    Input features: 64
 
-        Output features: 4 (e.g., 4 classes for classification)
+    Output features: 4 (e.g., 4 classes for classification)
 
         self.fc1 = nn.Linear(128 * 30 * 30, 128)
         self.fc2 = nn.Linear(128, 64)
@@ -94,15 +94,15 @@ The fully connected layers (dense layers) are defined:
 
  # Forward Pass
 
- The forward method defines the forward pass of the network:
+The forward method defines the forward pass of the network:
 
-    Pass the input x through the convolutional layers, followed by ReLU activation and pooling.
+Pass the input x through the convolutional layers, followed by ReLU activation and pooling.
 
-    Flatten the tensor.
+Flatten the tensor.
 
-    Pass the flattened tensor through the fully connected layers, with ReLU activation after the first two layers.
+Pass the flattened tensor through the fully connected layers, with ReLU activation after the first two layers.
 
-    Return the output of the final fully connected layer.
+Return the output of the final fully connected layer.
 
         def forward(self, x):
           x = self.pool(F.relu(self.conv1(x)))
@@ -116,9 +116,9 @@ The fully connected layers (dense layers) are defined:
 
 # Loss Function and Optimizer
 
-    criterion: Defines the loss function as CrossEntropyLoss, which is suitable for classification problems.
+criterion: Defines the loss function as CrossEntropyLoss, which is suitable for classification problems.
 
-    optimizer: Defines the optimizer as Adam with a learning rate of 0.0001.
+optimizer: Defines the optimizer as Adam with a learning rate of 0.0001.
 
       criterion = nn.CrossEntropyLoss()
       optimizer = optim.Adam(model.parameters(), lr=0.0001)
