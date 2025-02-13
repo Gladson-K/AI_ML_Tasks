@@ -1,3 +1,11 @@
+
+
+# Dataset Links for this Implementation
+
+MNIST Dataset (Neural Network) : https://www.kaggle.com/datasets/hojjatk/mnist-dataset
+
+Corn or Maize Dataset (Convolutional Neural Network) : https://www.kaggle.com/datasets/smaranjitghose/corn-or-maize-leaf-disease-dataset
+
 # Code Overview
 
 # Task 1 Neural Network
