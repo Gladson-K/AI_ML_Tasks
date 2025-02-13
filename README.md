@@ -142,7 +142,7 @@ Sure! Let's break down this code step-by-step:
 - **Initialize the Neural Network**:
   ```python
     model_nn = Neuralnetwork(alpha=0.0005, epochs=20)
-    ```
+  ```
     - **Purpose**: Creates a neural network model with a learning rate of 0.0005 and 20 epochs.
 
 - **Generate Weights**:
@@ -159,7 +159,7 @@ Sure! Let's break down this code step-by-step:
     b1 = generate_bias(64, 0)
     b2 = generate_bias(32, 0)
     b3 = generate_bias(10, 0)
-    ```p
+    ```
     - **Purpose**: Creates bias vectors for each layer based on user input. In this case, all biases are set to zero.
 
 
